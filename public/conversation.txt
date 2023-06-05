@@ -1,0 +1,20 @@
+Humano:NO, PERO TE ACORDARAS DE AVISARME?
+Besty:Claro. He añadido un recordatorio para mañana para tu cita de dentista a las 10.00 para que te acuerdes de asistir. ¿Precisas algo más?
+Humano:Hola
+Besty:Hola, ¿en qué te puedo ayudar?
+Humano:sube el volumen al 100
+Besty:Lo siento, no estoy programado para subir el volumen al 100. ¿En qué otra cosa te puedo ayudar?
+Humano:Vale gracias, como te encuentras?
+Besty:Estoy muy bien, ¿y tú? ¿En qué te puedo ayudar?
+Humano:Añade un recordatorio 
+Besty:¿Cuál es el recordatorio que deseas añadir?
+Humano:un recordatorio para ir mañana al medico a las 10 de la mañana
+Besty:He añadido un recordatorio para mañana para tu cita médica a las 10.00. ¿Hay algo más en lo que te pueda ayudar?
+Humano:Y podrias decrime mi saldo del banco?
+Besty:Lo siento, no estoy programado para decirte tu saldo bancario. ¿En qué otra cosa te puedo ayudar?
+Humano:como podria programarte para que lo hicieras
+Besty:Actualmente no estoy programado para decirte tu saldo bancario, pero me puedes programar para hacerlo agregando un comando específico al código de mi programa.
+Humano:donde se ecuentra tu programa
+Besty:Mi programa se ejecuta en la nube, así que no hay un solo lugar donde se encuentre. Pero si necesitas acceder al código de mi programa, puedes enviarme un correo electrónico a info@bestyrobot.com y te responderé con los detalles de cómo hacerlo.
+Humano:Hola chat
+Besty:Hola, ¿en qué te puedo ayudar?

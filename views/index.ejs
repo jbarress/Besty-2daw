@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf8">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/fullcalendar.min.css" />
+    <link rel="stylesheet" href="/css/customCalendar.css" />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+</head>
+
+<body>
+    <div class="drag" id="container">
+        <div id="container-respuesta-bot">
+            <% if (typeof respuestaBot !=='undefined' ) { %>
+                Besty: <%- respuestaBot %>
+                <input type="text" id="respuestaBotStr" style="display: none;" value='<%- respuestaBot %>'></input>
+                    <% } %>
+        </div>
+        <div id="container-formulario">
+            <form action="/" method="POST">
+                <input type="text" id="orden-input" name="orden" />
+                <button type="submit" id="orden-btn"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="drag" id="container-calendar">
+        <div id="calendar" class="calendar"></div>
+    </div>
+    <div class="drag" id="container-contactos">
+        <div class="container-titulo">
+            <h2>Contactos</h2>
+        </div>
+        <input type="text" id="search-input" class="searcher" placeholder="Buscar por nombre">
+        <ul id="contact-list">
+            <% contactos.forEach((contacto)=> { %>
+                <li class="contact-item">
+                    <h3>
+                        <%= contacto.nombre?.toString() || '' %>
+                    </h3>
+                    <p>Email: <%= contacto.email?.toString() || '' %>
+                    </p>
+                    <p>Teléfono: <%= contacto.telefono?.toString() || '' %>
+                    </p>
+                </li>
+                <% }) %>
+        </ul>
+    </div>
+    <div class="drag" id="container-transacciones">
+        <div class="container-titulo">
+            <h2>Transacciones</h2>
+        </div>
+        <input type="text" id="search-box" class="searcher" placeholder="Buscar por nombre de categoría">
+        <ul id="transacciones-list">
+            <% transacciones.forEach((transaccion)=> { %>
+                <li class="transaccion-item">
+                    <h3 class="categoria"><b>Concepto</b>: <%= transaccion.categoria?.toString() || '' %>
+                    </h3>
+                    <p class="monto"><b>Cantidad</b>: <%= transaccion.monto?.toString() || '' %>
+                    </p>
+                    <p class="tipo"><b>Tipo</b>: <%= transaccion.tipo?.toString() || '' %>
+                    </p>
+                </li>
+                <% }) %>
+        </ul>
+    </div>
+    <div class="drag" id="container-music">
+        <div id="draggable">
+            <iframe id="spotify-player" title="Spotify Embed: Mama by Kid" src="" width="100%" height="100%"
+                frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media;encrypted-media; fullscreen; picture-in-picture "
+                loading="lazy" allowtransparency="true">
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        // Obtén la respuesta del bot desde el servidor
+        var respuesta = document.getElementById('respuestaBotStr').value;
+        if(respuesta != undefined && respuesta != ""){
+            // Función para reproducir el audio
+            function reproducirAudio(texto) {
+                const utterance = new SpeechSynthesisUtterance(texto);
+                speechSynthesis.speak(utterance);
+            }
+            console.log(respuesta)
+            // Reproducir el audio cuando la página se carga
+            window.addEventListener('load', function () {
+                reproducirAudio(respuesta);
+            });
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="/js/calendar.js"></script>
+    <script type="text/javascript" src="/js/drag-container.js"></script>
+    <script type="text/javascript" src="/js/buscador-contactos.js"></script>
+    <script type="text/javascript" src="/js/buscador-transacciones.js"></script>
+    <script type="text/javascript" src="/js/player-music.js"></script>
+    <script type="text/javascript" src="/js/executeConfig.js"></script>
+    <script type="text/javascript" src="/js/voice.js"></script>
+</body>
+
+</html>
